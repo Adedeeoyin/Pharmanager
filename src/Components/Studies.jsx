@@ -7,6 +7,7 @@ const Studies = () => {
         <p className="text-center text-zinc-800 text-lg font-light font-euclid pb-14">Get a glimpse of our partnership connections helped providers deliver better patient outcomes and sustainable practices.</p>
 
         <div className='grid grid-cols-5 grid-rows-4 gap-4 w-full h-screen'>
+          
             <div className=' bg-[url("src/assets/Images/study-1.png")] w-full h-full bg-center bg-cover bg-no-repeat col-span-2 row-span-2 border border-solid'></div>
             <div className=' bg-[url("src/assets/Images/study-2.png")] w-full h-full bg-center bg-cover bg-no-repeat border border-solid'></div>
             <div className=' bg-[url("src/assets/Images/study-3.png")] w-full h-full bg-center bg-cover bg-no-repeat border border-solid'></div>

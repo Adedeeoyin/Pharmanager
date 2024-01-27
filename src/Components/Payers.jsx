@@ -1,5 +1,7 @@
 import React from 'react'
 import Button from './Button'
+import LazyLoad from 'react-lazy-load'
+
 
 const Payers = () => {
   return (
@@ -13,8 +15,10 @@ const Payers = () => {
             <Button.Square_md>GET STARTED</Button.Square_md>
         </div>
 
+        <LazyLoad>
         <div className='w-full h-full bg-[url("src/assets/Images/payers.png")] bg-cover bg-no-repeat bg-center'>&nbsp;
         </div>
+        </LazyLoad>
     </div>
   )
 }
