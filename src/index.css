@@ -1,0 +1,54 @@
+@import url('https://fonts.cdnfonts.com/css/euclid-circular-a');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    scroll-behavior: smooth;
+}
+
+.home-category{
+    @apply text-center py-[13px] text-zinc-800 text-nowrap text-[10px] font-semibold font-euclid leading-normal;
+}
+
+.home-dropdown{
+    @apply text-black w-full text-base font-medium font-euclid leading-normal px-4 py-3 hover:border-2 border-sky-400;
+}
+
+.footer-links{
+    @apply text-black text-opacity-50 text-sm font-normal font-euclid uppercase leading-[22.88px];
+}
+
+.autofit{
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.detail-h2{
+    @apply w-4 h-4 p-4 flex justify-center items-center rounded-full border text-base font-medium z-50;
+}
+
+.formikInput{
+    @apply text-gray-600 placeholder:text-gray-600 p-3.5 w-full font-euclid border-2 rounded-lg
+}
+
+.navActive{
+    position: relative;
+}
+.navActive::after{
+    content: '';
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.50);
+}
+
+.noscrollbar::-webkit-scrollbar{
+    display: none;
+}
+.noscrollbar{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
