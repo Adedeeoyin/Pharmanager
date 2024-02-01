@@ -16,7 +16,7 @@ const Payers = () => {
         </div>
 
         <LazyLoad>
-        <div className='w-full h-full bg-[url("src/assets/Images/payers.png")] bg-cover bg-no-repeat bg-center'>&nbsp;
+        <div className='w-full h-full bg-[url("./src/assets/Images/payers.png")] bg-cover bg-no-repeat bg-center'>&nbsp;
         </div>
         </LazyLoad>
     </div>
