@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from './Button'
 import LazyLoad from 'react-lazy-load'
+import payer_img from '../assets/Images/payers.png'
 
 
 const Payers = () => {
@@ -16,7 +17,12 @@ const Payers = () => {
         </div>
 
         <LazyLoad>
-        <div className='w-full h-full bg-[url("./src/assets/Images/payers.png")] bg-cover bg-no-repeat bg-center'>&nbsp;
+        <div className='w-full h-full'>
+          <img
+          className='w-full object-cover object-center h-full'
+           src={payer_img}
+            alt="payer-img" />
+          &nbsp;
         </div>
         </LazyLoad>
     </div>
