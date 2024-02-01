@@ -4,13 +4,17 @@ import { MdVerified } from "react-icons/md";
 import { FaStar } from "react-icons/fa";
 import Button from './Button';
 import { MenuContext } from '../Context/MenuContext';
+import profile1_avatar from '../assets/Images/profile1.png'
+import profile2_avatar from '../assets/Images/profile-2.png'
+import profile3_avatar from '../assets/Images/profile3.png'
 
 export const ProfileCard1 = () => {
     const {setDetail} = useContext(MenuContext)
   return (
          
                 <div className='h-full w-full inline-block shadow rounded-[16px]'>
-                    <div className='bg-[url("src/assets/Images/profile1.png")] bg-cover bg-center bg-no-repeat w-full h-[20vh] relative'>
+                    <div className=' w-full h-[20vh] relative'>
+                            <img src={profile1_avatar} alt="profile-1"className='w-full h-full object-cover object-center' />
                             <span className='absolute top-2 right-2 rounded-full bg-white p-2'>
                                 <CiHeart className='text-[#009FE3]'/>
                             </span>
@@ -43,7 +47,8 @@ export const ProfileCard2 = ()=> {
     const {setDetail} = useContext(MenuContext)
     return(
         <div className='h-full w-full inline-block shadow rounded-[16px]'>
-                    <div className='bg-[url("src/assets/Images/profile-2.png")] bg-cover bg-center bg-no-repeat w-full h-[20vh] relative'>
+                    <div className=' w-full h-[20vh] relative'>
+                            <img src={profile2_avatar} alt="profile-2"className='w-full h-full object-cover object-center' />
                             <span className='absolute top-2 right-2 rounded-full bg-white p-2'>
                                 <CiHeart className='text-[#009FE3]'/>
                             </span>
@@ -77,7 +82,8 @@ export const ProfileCard3 = ({extraClass})=> {
     const {setDetail} = useContext(MenuContext)
     return(
         <div className={`h-full w-full inline-block shadow rounded-[16px] ${extraClass} `}>
-                    <div className='bg-[url("src/assets/Images/profile3.png")] bg-cover bg-center bg-no-repeat w-full h-[20vh] relative'>
+                    <div className=' w-full h-[20vh] relative'>
+                            <img src={profile3_avatar} alt="profile-3"className='w-full h-full object-cover object-center' />
                             <span className='absolute top-2 right-2 rounded-full bg-white p-2'>
                                 <CiHeart className='text-[#009FE3]'/>
                             </span>

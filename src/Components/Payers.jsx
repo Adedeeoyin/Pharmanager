@@ -1,6 +1,5 @@
 import React from 'react'
 import Button from './Button'
-import LazyLoad from 'react-lazy-load'
 import payer_img from '../assets/Images/payers.png'
 
 
@@ -16,15 +15,14 @@ const Payers = () => {
             <Button.Square_md>GET STARTED</Button.Square_md>
         </div>
 
-        <LazyLoad>
+       
         <div className='w-full h-full'>
           <img
           className='w-full object-cover object-center h-full'
            src={payer_img}
             alt="payer-img" />
-          &nbsp;
         </div>
-        </LazyLoad>
+        
     </div>
   )
 }
