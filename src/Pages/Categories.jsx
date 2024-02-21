@@ -5,6 +5,7 @@ import Button from '../Components/Button';
 import { ProfileCard1, ProfileCard2, ProfileCard3 } from '../Components/ProfileCard';
 import category_img from '../assets/Images/page-category1.png'
 import { useLocation } from 'react-router-dom';
+import Label_LocationSearchInput from '../Services/Location_API_Label';
 
 const Categories = () => {
   const [focus_name, setFocus_name] = useState(false)
@@ -45,7 +46,8 @@ const Categories = () => {
                 <span className='absolute top-1.5 right-1 text-2xl text-gray-600 cursor-pointer '><RiArrowDropDownLine/></span>
               </div>
 
-              <div className='relative flex-1'>
+              <Label_LocationSearchInput width={'w-full'} />
+              {/* <div className='relative flex-1'>
                 <label onClick={()=> {setFocus_location(true); locationRef.current.focus()}} className={` left-2 ${focus_location?'-top-2 text-blue-800':'top-2 text-gray-600'} transition-all duration-500 px-1 bg-white absolute  text-xs font-medium font-euclid`}>Location
                 </label>
                 <Inputs.Input_sm
@@ -53,7 +55,7 @@ const Categories = () => {
                 onBlur={(e)=> {setFocus_location(false); e.target.value !== ''? setFocus_location(true): false}}
                 r={locationRef}
                 myClass={`${focus_location?'focus:border-blue-800 ':''}`}/>
-              </div>
+              </div> */}
 
               <Button.Square_sm type='submit' onClick={(e)=> e.preventDefault()} extraClass={'bg-sky-500 w-full h-full text-white'}>Search</Button.Square_sm>
                 

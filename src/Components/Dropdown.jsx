@@ -65,4 +65,32 @@ export const Tools_dropdown = ()=> {
     )
 }
 
+export const Recent_Dropdown = ()=> {
+  const {recentDropdown, setRecent} = useContext(MenuContext)
+  return (
+    <div className='bg-white flex flex-col absolute top-10 text-nowrap shadow z-50 left-0'>
+      <div className='home-dropdown' onClick={()=>setRecent(!recentDropdown)}>A week ago</div>
+      <div className='home-dropdown' onClick={()=>setRecent(!recentDropdown)}>A month ago</div>
+      <div className='home-dropdown' onClick={()=>setRecent(!recentDropdown)}>3 month ago</div>
+      <div className='home-dropdown' onClick={()=>setRecent(!recentDropdown)}>6 month ago</div>
+      <div className='home-dropdown' onClick={()=>setRecent(!recentDropdown)}>A year ago</div>
+    </div>
+  )
+}
+
+export const DatePosted = ()=> {
+  const {datePostedDropdown, setDatePosted} = useContext(MenuContext)
+  return (
+    <div className='bg-white flex flex-col absolute top-10 text-nowrap shadow z-50 left-0 p-2 font-euclid'>
+      <div className='flex flex-col'>
+        <label>From:</label>
+        <input type="text" className='bg-gray-200 p-1 outline-none' placeholder='DD/ MM/ YY' />
+      </div>
+      <div className='flex flex-col'>
+        <label>To:</label>
+        <input type="text" className='bg-gray-200 p-1 outline-none' placeholder='DD/ MM/ YY' />
+      </div>
+    </div>
+  )
+}
 // export default HeroDropdown

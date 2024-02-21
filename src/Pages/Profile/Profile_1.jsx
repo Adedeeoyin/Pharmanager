@@ -72,11 +72,11 @@ const Profile_1 = () => {
 
       <section className='w-[60vw] mx-auto mt-32'>
 
-          <div className='w-full h-full flex  gap-3 p-2'>
+          <div className='w-full h-full flex  gap-10 p-2'>
               <div className='w-3/4 justify-between flex flex-col '>
                 <div className=''>
                   <h2 className="text-slate-900 text-xl font-medium font-euclid leading-[30px]">About</h2>
-                  <p className="text-slate-900 text-base font-normal font-euclid mt-2">Dorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque. Ut diam quam, semper iaculis condimentum ac, vestibulum eu nisl</p>
+                  <p className="text-slate-900 max-w-[840px] text-base font-normal font-euclid mt-2">Dorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque. Ut diam quam, semper iaculis condimentum ac, vestibulum eu nisl</p>
                 </div>
                 <div className=''>
                   <h2 className="text-slate-900 text-xl font-medium font-euclid leading-[30px]">Specialization</h2>

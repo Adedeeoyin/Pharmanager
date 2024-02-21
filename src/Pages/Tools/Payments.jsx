@@ -53,7 +53,7 @@ const Payments = () => {
             <div className='w-full grid grid-cols-6 mb-12 pl-6 text-black text-base font-medium font'>
                 <span className='flex items-center gap-2'>
                     <input type="checkbox" />
-                    Application id
+                    Invoice ID
                 </span>
                 <span>Date:</span>
                 <span>Partner Name</span>
@@ -65,15 +65,15 @@ const Payments = () => {
             {Requests_Data.map(
                 (item,i)=>{
                     return(
-                        <div key={i} className='w-full grid grid-cols-6 items-center border border-zinc-400 py-2 pl-6 text-neutral-600 text-sm '>
+                        <div key={i} className='w-full grid grid-cols-6 gap-2 items-center border border-zinc-400 py-2 pl-6 text-neutral-600 text-sm '>
                             <span className='flex items-center gap-2 text-sky-500 text-sm font-light'>
                                 <input
                                 className='cursor-pointer'
                                  type="checkbox" />
                                 {item.id}
                             </span>
-                            <span>{item.period}</span>
-                            <span>{item.partnerName}</span>
+                            <span className='text-xs'>{item.period}</span>
+                            <span className='truncate'>{item.partnerName}</span>
                             <span>{item.partnerType}</span>
                             <span>{`#${item.amount.toFixed(2)}`}</span>
                             <span className='flex items-center gap-8'>
@@ -95,7 +95,7 @@ const Payments = () => {
                                             <TiDeleteOutline className=' text-red-700'/> Delete</span>
                                             <Link
                                         onClick={()=>{ setDetail(true); setViewDetail(Requests_Data[i])}}
-                                         to={'/partnership-request'} className='flex gap-2 items-center cursor-pointer text-zinc-300 hover:bg-opacity-30 hover:bg-zinc-300'><IoInformationCircleOutline className=' text-neutral-400'/>View details</Link>
+                                         to={'/partnership-request'} className='flex gap-2 items-center cursor-pointer text-black  hover:bg-opacity-30 hover:bg-zinc-300'><IoInformationCircleOutline/>View details</Link>
                                     </div>
                                 </span>
                             </span>

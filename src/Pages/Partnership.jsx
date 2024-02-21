@@ -5,14 +5,14 @@ import {requests} from '../Data/Paternership_Request'
 import { IoBookmarkSharp } from "react-icons/io5";
 import { GoBookmark } from "react-icons/go";
 import partnership_img from '../assets/Images/page-partnership-1.png'
-import { Partnership_Dropdown } from '../Components/Dropdown';
+import { DatePosted, Partnership_Dropdown, Recent_Dropdown } from '../Components/Dropdown';
 import { MenuContext } from '../Context/MenuContext';
 import { useLocation } from 'react-router-dom'
 
 const Partnership = () => {
   const tags = ['criminal law', 'legal', 'attorney', 'crime']
 
-  const {dropdownOpen2, setDropdown2} = useContext(MenuContext)
+  const {dropdownOpen2, setDropdown2, recentDropdown, setRecent, datePostedDropdown, setDatePosted} = useContext(MenuContext)
   const location = useLocation()
   const h = window.innerHeight
   useEffect(
@@ -37,18 +37,26 @@ const Partnership = () => {
       <div className='flex w-full flex-col mt-32'>
         <h2 className="text-center text-black text-3xl font-semibold font-euclid">Partnerships requested</h2>
         <div className='flex gap-6 mt-5 mb-20 w-full justify-start'>
-          <div className='flex gap-2 items-center '>
-            <h2 className="text-black text-xl font-normal font-['Montserrat']">Recent</h2>
-            <span className='text-3xl'><RiArrowDropDownLine/></span>
-          </div>
-
-          <div className='flex gap-2 items-center'>
-            <h2 className="text-black text-xl font-normal font-['Montserrat']">Date Posted</h2>
-            <span className='text-3xl'><RiArrowDropDownLine/></span>
+          <div className='flex gap-2 items-center relative'>
+            <h2 className="text-black text-xl font-normal font-euclid">Recent</h2>
+            <span
+             className='text-3xl cursor-pointer'
+             onClick={()=> setRecent(!recentDropdown)}
+             ><RiArrowDropDownLine/></span>
+            {recentDropdown && <Recent_Dropdown/>}
           </div>
 
           <div className='flex gap-2 items-center relative'>
-            <h2 className="text-black text-xl font-normal font-['Montserrat']">Request Partner Type</h2>
+            <h2 className="text-black text-xl font-normal font-euclid">Date Posted</h2>
+            <span
+             className='text-3xl cursor-pointer'
+             onClick={()=>setDatePosted(!datePostedDropdown)}
+             ><RiArrowDropDownLine/></span>
+            {datePostedDropdown && <DatePosted/>}
+          </div>
+
+          <div className='flex gap-2 items-center relative'>
+            <h2 className="text-black text-xl font-normal font-euclid">Request Partner Type</h2>
             <span className='text-3xl'>
               <RiArrowDropDownLine
               className='cursor-pointer'
@@ -72,9 +80,9 @@ const Partnership = () => {
                           className='w-8 '
                           alt="client-avatar"  />
                           <div className='flex flex-col gap-1 items-start'>
-                            <h2 className="text-center text-black text-base font-semibold font-['Montserrat']">{request.title}</h2>
-                            <h3 className="text-black text-xs font-medium font-['Montserrat']">{request.client_name}</h3>
-                            <p className="w-[180px] text-neutral-600 text-xs font-normal font-['Montserrat']">{request.description}</p>
+                            <h2 className="text-center text-black text-base font-semibold font-euclid">{request.title}</h2>
+                            <h3 className="text-black text-xs font-medium font-euclid">{request.client_name}</h3>
+                            <p className="w-[180px] text-neutral-600 text-xs font-normal font-euclid">{request.description}</p>
                           </div>
                           <span className='border border-gray-200 rounded-full p-2'>
                           {/* <IoBookmarkSharp className='text-[rgba(3, 12, 89, 1)]' /> */}
@@ -86,7 +94,7 @@ const Partnership = () => {
                             (item,index) => {
                               return(
                                 <div key={index} className='shadow p-1 flex items-center justify-center rounded-md bg-[#EEEEEE]'>
-                                   <p className="text-center text-black text-xs font-normal font-['Montserrat'] text-nowrap">{item}</p>
+                                   <p className="text-center text-black text-xs font-normal font-euclid text-nowrap">{item}</p>
                                 </div>
                               )
                             }
@@ -103,8 +111,8 @@ const Partnership = () => {
                 <div className='flex items-start gap-6'>
                   <img src={requests[0].img} alt="client-avatar" />
                   <span className='flex flex-col gap-2'>
-                    <h2 className="text-center text-black text-xl font-semibold font-['Montserrat']">Hospital services</h2>
-                    <p className="text-black text-sm font-medium font-['Montserrat']">Femi Otebola</p>
+                    <h2 className="text-center text-black text-xl font-semibold font-euclid">Hospital services</h2>
+                    <p className="text-black text-sm font-medium font-euclid">Femi Otebola</p>
                   </span>
                 </div>
                 
@@ -113,22 +121,22 @@ const Partnership = () => {
                           <GoBookmark className='text-[#56494E80]'/>
                 </span>
               </div>
-              <h2 className="text-black text-sm font-semibold font-['Montserrat']">Project Overview</h2>
-              <p className="text-black text-sm font-normal font-['Montserrat']">
+              <h2 className="text-black text-sm font-semibold font-euclid">Project Overview</h2>
+              <p className="text-black text-sm font-normal font-euclid">
               The ideal candidate should have an LLB with a minimum of 2nd Class Upper division with 3 - 7 years experience in Litigation at trial and appellate courts. The ideal candidate should have an LLB with a minimum of 2nd Class Upper division with 3 - 7 years experience in Litigation at trial and appellate courts. The ideal candidate should have an LLB with a minimum of 2nd Class Upper division with 3 - 7 years experience in Litigation at trial and appellate courts. The ideal candidate should have an LLB with a minimum of 2nd Class Upper division with 3 - 7 years experience in Litigation at trial and appellate courts.
               </p>
-              <h3 className="text-black text-sm font-semibold font-['Montserrat']">Responsibilities</h3>
-              <p className="text-black text-sm font-normal font-['Montserrat']">The ideal candidate should have an LLB with a minimum of 2nd Class Upper division with 3 - 7 years experience in Litigation at trial and appellate courts.
+              <h3 className="text-black text-sm font-semibold font-euclid">Responsibilities</h3>
+              <p className="text-black text-sm font-normal font-euclid">The ideal candidate should have an LLB with a minimum of 2nd Class Upper division with 3 - 7 years experience in Litigation at trial and appellate courts.
               </p>
 
               <div className='flex flex-col gap-6'>
-                <h4 className="text-black text-sm font-semibold font-['Montserrat']">Tags</h4>
+                <h4 className="text-black text-sm font-semibold font-euclid">Tags</h4>
                 <div className='flex gap-3'>
                   {tags.map(
                     (tag, index) => {
                       return(
                         <div key={index} className='shadow p-1 flex items-center justify-center rounded-md bg-[#EEEEEE]'>
-                          <p className="text-center text-black text-xs font-normal font-['Montserrat'] text-nowrap">{tag}</p>
+                          <p className="text-center text-black text-xs font-normal font-euclid text-nowrap">{tag}</p>
                         </div>
                       )
                     }
@@ -137,15 +145,15 @@ const Partnership = () => {
               </div>
 
               <form className='flex flex-col mt-12'>
-                <label htmlFor="" className="text-black text-sm font-medium font-['Montserrat']">Email Address 
+                <label htmlFor="" className="text-black text-sm font-medium font-euclid">Email Address 
                 <span className='text-orange-700'>*</span></label>
                 <input type="text" className='w-full p-2 border rounded border-stone-300 outline-none' />
 
-                <label htmlFor="" className="text-black text-sm font-medium font-['Montserrat'] mt-4">Pharmanager Partner Number 
+                <label htmlFor="" className="text-black text-sm font-medium font-euclid mt-4">Pharmanager Partner Number 
                 <span className='text-orange-700'>*</span></label>
                 <input type="text" className='w-full p-2 border rounded border-stone-300 outline-none' />
 
-                <label htmlFor="" className="text-black text-sm font-medium font-['Montserrat'] mt-4">Cover Note 
+                <label htmlFor="" className="text-black text-sm font-medium font-euclid mt-4">Cover Note 
                 </label>
                 <textarea className='w-full border rounded border-stone-300 outline-none p-2' name="" id="" cols="30" rows="10"></textarea>
 

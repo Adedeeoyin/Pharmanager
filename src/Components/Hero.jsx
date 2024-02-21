@@ -10,6 +10,7 @@ import alpha from '../assets/Images/alpha.png'
 import greenCross from '../assets/Images/green-cross.png'
 import { MenuContext } from '../Context/MenuContext';
 import {HeroDropdown} from './Dropdown';
+import LocationSearchInput from '../Services/Location_API';
 
 const Hero = () => {
     const {dropdownOpen,setDropdown} = useContext(MenuContext);
@@ -29,6 +30,7 @@ const Hero = () => {
                     <CiSearch
                     onClick ={()=> inputPartnership.current.focus()}
                      className=' text-neutral-400 cursor-pointer'/>
+                     
                     <input
                     ref={inputPartnership}
                     type="text"
@@ -40,7 +42,8 @@ const Hero = () => {
                 <div className='flex gap-6 items-center'>
                    <div className='flex items-center'>
                     <FaLocationDot className='text-neutral-400'/>
-                    <input  className='placeholder:text-neutral-400 placeholder:text-sm text-neutral-600 pl-[13px] pr-8  bg-transparent max-w-32 outline-none' placeholder='Local area' />
+                    <LocationSearchInput width={'w-[14rem]'} />
+                    {/* <input  className='placeholder:text-neutral-400 placeholder:text-sm text-neutral-600 pl-[13px] pr-8  bg-transparent max-w-32 outline-none' placeholder='Local area' /> */}
                     <RiArrowDropDownLine
                      className={`${dropdownOpen && 'rotate-180'} self-end text-neutral-400 text-3xl cursor-pointer`}
                      onClick={()=> setDropdown(!dropdownOpen) }

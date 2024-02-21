@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useAuth } from './AuthContext'
 import { useNavigate, useLocation } from 'react-router-dom'
 
@@ -7,6 +7,11 @@ const Login = () => {
     const auth = useAuth()
     const navigate = useNavigate()
     const location = useLocation()
+    const loginRef = useRef()
+
+    useEffect(()=>{
+      loginRef.current.focus()
+    },[])
 
     const redirectPath = location.state?.path || '/'
 
@@ -22,6 +27,7 @@ const Login = () => {
             <label className='flex flex-col gap-1' htmlFor="fullName">FullName:
             <input
             value={user}
+            ref={loginRef}
             onChange={(e)=> setUser(e.target.value)}
             className='bg-white outline-none p-2 border border-gray-400'
              type="text" />

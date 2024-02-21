@@ -7,6 +7,8 @@ export const ContextProvider = ({children})=> {
   const [dropdownOpen, setDropdown] = useState(false)
   const [dropdownOpen2,setDropdown2] = useState(false)
   const [toolsDropdown, setToolsDropdown] = useState(false)
+  const [recentDropdown, setRecent] = useState(false)
+  const [datePostedDropdown, setDatePosted] = useState(false)
   
   const [detail, setDetail] = useState(false)
   const [ViewDetail, setViewDetail] = useState(null)
@@ -33,7 +35,7 @@ export const ContextProvider = ({children})=> {
 
 
     return(
-        <MenuContext.Provider value={{menuOpen,setMenu,dropdownOpen,setDropdown,dropdownOpen2,setDropdown2, data, setdata, step, setStep,toolsDropdown, setToolsDropdown,detail, setDetail,ViewDetail, setViewDetail}}>
+        <MenuContext.Provider value={{menuOpen,setMenu,dropdownOpen,setDropdown,dropdownOpen2,setDropdown2, recentDropdown, setRecent, datePostedDropdown, setDatePosted, data, setdata, step, setStep,toolsDropdown, setToolsDropdown,detail, setDetail,ViewDetail, setViewDetail}}>
             {children}
         </MenuContext.Provider>
     )
